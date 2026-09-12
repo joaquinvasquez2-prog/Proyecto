@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
         <header>
-            <h2>MarketOps Reporte de fallas</h2>
+            <h1>MarketOps</h1>
+            <h2>Reporte de fallas</h2>
             <a href="Encargado_Inicio.html">Inicio</a>
             <a href="Encargado_Historial.html">Historial de incidencias</a>
             <a href="Login.html">Cerrar Sesion  </a>
         </header>
+        <h3>Reportar Falla</h3>
+        <form action="">
+        <label for="Equipo Falla">Seleccionar Equipo</label>
+        <select id="Equipo Falla">
+            <option value="">Seleccionar</option>
+            <option value="Caja">Caja</option>
+            <option value="Balanza">Balanza</option>
+            <option value="Impresora">Impresora</option>
+        </select>
+        <label for="Reporte">Descripcion del reporte</label>
+        <input type="text" id="Reporte">
+        <button type="submit">Registrar incidencia</button>
+        </form>
     </body>
 </html>

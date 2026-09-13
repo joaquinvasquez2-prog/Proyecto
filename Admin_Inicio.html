@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        <title>Admin Inicio</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -16,21 +18,31 @@
                     <th>Sucursal</th>
                     <th>Nombre</th>
                     <th>Rol</th>
+                    <th></th>
                 </tr>
                 <tr>
                     <td>Puente Alto</td>
                     <td>Juan</td>
                     <td>Administrador</td>
+                    <td>
+                        <button type="button">Editar</button>
+                    </td>
                 </tr>
                 <tr>
                     <td>La Florida</td>
                     <td>Roberto</td>
                     <td>Tecnico</td>
+                    <td>
+                        <button type="button">Editar</button>
+                    </td>
                 </tr>
                 <tr>
                     <td>Providencia</td>
                     <td>Benjamin</td>
                     <td>Encargado</td>
+                    <td>
+                        <button type="button">Editar</button>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -50,17 +62,34 @@
                     <input type="password">
                 </div>
                 <div>
-                    <label for="">Rol</label>
-                    <input type="text">
+                    Seleccionar Rol
+                    <select name="rol" id="rol">
+                    <option value="Admin">Administrador</option>
+                    <option value="Encargado">Encargado</option>
+                    <option value="Tecnico">Tecnico</option>
+                    </select>
                 </div>
                 <div>
-                    <label for="">Sucursal</label>
-                    <input type="text">
+                    Sucursal
+                    <select name="sucursal" id="sucursal">
+                    <option value="Admin">Puente Alto</option>
+                    <option value="Encargado">La florida</option>
+                    <option value="Tecnico">Providencia</option>
+                    </select>
                 </div>
                 <button type="submit">Registrar</button>
-
             </form>
         </div>
-      </main> 
+    </main>
+    <script>
+    const botonesEditar = document.querySelectorAll('td button[type="button"]');
+    botonesEditar.forEach((boton) => {
+        boton.addEventListener('click', () => {
+            const fila = boton.closest('tr');
+            const nombreUsuario = fila.children[1].textContent;
+            confirm(`¿Editar al usuario ${nombreUsuario}?`);
+        })  
+    })
+    </script>
     </body>
- </html>
+</html>

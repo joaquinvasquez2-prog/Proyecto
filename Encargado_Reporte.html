@@ -11,8 +11,9 @@
             <a href="Login.html">Cerrar Sesion  </a>
         </header>
         
-        <form action="">
+        <form class="reporte" action="">
             <h3>Reportar Falla</h3>
+        <div>
         <label for="Equipo Falla">Seleccionar Equipo</label>
         <select id="Equipo Falla">
             <option value="">Seleccionar</option>
@@ -20,8 +21,13 @@
             <option value="Balanza">Balanza</option>
             <option value="Impresora">Impresora</option>
         </select>
+        </div>
+        <div>
         <label for="Reporte">Descripcion del reporte</label>
-        <textarea name="Reporte" id="Reporte"></textarea>
+        </div>
+        <div>
+            <textarea name="Reporte" id="Reporte"></textarea>
+        </div>
         <button type="submit">Registrar incidencia</button>
         </form>
     </body>

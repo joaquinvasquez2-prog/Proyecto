@@ -48,18 +48,18 @@
         </div>
         <div class="Creacion">
             <h2>Nuevo Usuario</h2>
-            <form action="">
+            <form action="" id="formnuevo">
                 <div>
                     <label for="">Nombre Completo</label>
-                    <input type="text">
+                    <input type="text" id="nombre">
                 </div>
                 <div>
                     <label for="">Nombre de Usuario</label>
-                    <input type="text">
+                    <input type="text" id="usuario">
                 </div>
                 <div>
                     <label for="">Contraseña</label>
-                    <input type="password">
+                    <input type="password" id="contraseña">
                 </div>
                 <div>
                     Seleccionar Rol
@@ -82,14 +82,25 @@
         </div>
     </main>
     <script>
-    const botonesEditar = document.querySelectorAll('td button[type="button"]');
-    botonesEditar.forEach((boton) => {
+        const botonesEditar = document.querySelectorAll('td button[type="button"]');
+        botonesEditar.forEach((boton) => {
         boton.addEventListener('click', () => {
-            const fila = boton.closest('tr');
-            const nombreUsuario = fila.children[1].textContent;
-            confirm(`¿Editar al usuario ${nombreUsuario}?`);
+        const fila = boton.closest('tr');
+        const nombreUsuario = fila.children[1].textContent;
+        confirm(`¿Editar al usuario ${nombreUsuario}?`);
         })  
     })
+    </script>
+    <script>
+        document.getElementById("formnuevo").addEventListener("submit", function(evento) {
+            const usu = document.getElementById("usuario").value.trim();
+            const pas = document.getElementById("contraseña").value.trim();
+            const nom = document.getElementById("nombre").value.trim();
+            if (usu === "" || pas === "" || nom == ""){
+            evento.preventDefault();
+            alert("Complete todos los campos para poder continuar");                          
+            }
+            });
     </script>
     </body>
 </html>

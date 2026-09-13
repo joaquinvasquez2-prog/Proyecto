@@ -10,7 +10,7 @@
         <h1 class ="TituloPrincipal">
             Bienvenido a MarketOps
         </h1>
-        <form action="">
+        <form action="" id="formLogin">
             <h2>
             Iniciar Sesion
             </h2>
@@ -30,6 +30,18 @@
             <a href="Tecnico.html" class="boton-demo">Ingresar como Tecnico</a>
             <a href="Admin_Inicio.html" class="boton-demo">Ingresar como Admin</a>
         </div>
+
+            <script>
+                document.getElementById("formLogin").addEventListener("submit", function(evento) {
+                const usuario = document.getElementById("usuario").value.trim();
+                const password = document.getElementById("password").value.trim();
+                if (usuario === "" || password === "") 
+                {
+                evento.preventDefault();
+                alert("Complete todos los campos para poder continuar");                          
+                }
+                });
+            </script>
     </body>
 
 </html>

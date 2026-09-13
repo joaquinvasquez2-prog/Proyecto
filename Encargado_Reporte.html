@@ -15,7 +15,7 @@
             <a href="Login.html">Cerrar Sesion</a>
         </header>
         
-        <form class="reporte" action="">
+        <form class="reporte" action="" id="formReporte">
             <h3>Reportar Falla</h3>
         <div>
         <label for="Equipo Falla">Seleccionar Equipo</label>
@@ -34,5 +34,14 @@
         </div>
         <button type="submit">Registrar incidencia</button>
         </form>
+        <script>
+            document.getElementById("formReporte").addEventListener("submit", function(validar) {
+            const reporte = document.getElementById("Reporte").value.trim();
+            if (reporte === "") {
+            validar.preventDefault();
+            alert("Complete antes de enviar");
+            }
+            });
+        </script>
     </body>
 </html>

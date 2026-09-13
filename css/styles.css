@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: sans-serif;
+    background-color: #dadada;
 }
 header {
     width: 50cm;
@@ -11,8 +12,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-sizing: border-box;
     color: white;
+    border-radius: 10px;
 }
 header a{
     color: white;
@@ -22,6 +23,7 @@ table {
     border-collapse: collapse;
     width: 80%;
     margin: 30px auto;
+    background-color: beige;
 }
 th {
     background-color: #333;
@@ -37,7 +39,7 @@ td {
 
 }
 .Login {
-    background-color: rgb(220, 220, 220);
+    background-color: rgb(247, 247, 234);
     width: 400px;
     padding: 30px;
     border: 1px solid black;
@@ -61,4 +63,3 @@ td {
     height: 80px;
     resize: none;
 }
-

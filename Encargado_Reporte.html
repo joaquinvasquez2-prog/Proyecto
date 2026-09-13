@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Encargado Reporte</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <h2>MarketOps - Reporte de fallas</h2>
+            <a href="Encargado_Inicio.html">Inicio</a>
+            <a href="Encargado_Reporte.html">Reportar Fallas</a>
+            <a href="Encargado_Historial.html">Historial de incidencias</a>
+            <a href="Login.html">Cerrar Sesion</a>
+        </header>
+        
+        <form class="reporte" action="" id="formReporte">
+            <h3>Reportar Falla</h3>
+        <div>
+        <label for="Equipo Falla">Seleccionar Equipo</label>
+        <select id="Equipo Falla">
+            <option value="">Seleccionar</option>
+            <option value="Caja">Caja</option>
+            <option value="Balanza">Balanza</option>
+            <option value="Impresora">Impresora</option>
+        </select>
+        </div>
+        <div>
+        <label for="Reporte">Descripcion del reporte</label>
+        </div>
+        <div>
+            <textarea name="Reporte" id="Reporte"></textarea>
+        </div>
+        <button type="submit">Registrar incidencia</button>
+        </form>
+        <script>
+            document.getElementById("formReporte").addEventListener("submit", function(validar) {
+            const reporte = document.getElementById("Reporte").value.trim();
+            if (reporte === "") {
+            validar.preventDefault();
+            alert("Complete antes de enviar");
+            }
+            });
+        </script>
+    </body>
+</html>

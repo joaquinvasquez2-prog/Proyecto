@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Admin Inicio</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+        <h2>MarketOps - Panel Administrador</h2>
+        <a href="Admin_Inicio.html">Inicio</a>
+        <a href="Login.html">Cerrar Sesión</a>
+        </header>
+        <div class="TablaAdmin">
+            <table>
+                <tr>
+                    <th>Sucursal</th>
+                    <th>Nombre</th>
+                    <th>Rol</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Puente Alto</td>
+                    <td>Juan</td>
+                    <td>Administrador</td>
+                    <td>
+                        <button type="button">Editar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>La Florida</td>
+                    <td>Roberto</td>
+                    <td>Tecnico</td>
+                    <td>
+                        <button type="button">Editar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Providencia</td>
+                    <td>Benjamin</td>
+                    <td>Encargado</td>
+                    <td>
+                        <button type="button">Editar</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="Creacion">
+            <h2>Nuevo Usuario</h2>
+            <form action="" id="formnuevo">
+                <div>
+                    <label for="">Nombre Completo</label>
+                    <input type="text" id="nombre">
+                </div>
+                <div>
+                    <label for="">Nombre de Usuario</label>
+                    <input type="text" id="usuario">
+                </div>
+                <div>
+                    <label for="">Contraseña</label>
+                    <input type="password" id="contraseña">
+                </div>
+                <div>
+                    Seleccionar Rol
+                    <select name="rol" id="rol">
+                    <option value="Admin">Administrador</option>
+                    <option value="Encargado">Encargado</option>
+                    <option value="Tecnico">Tecnico</option>
+                    </select>
+                </div>
+                <div>
+                    Sucursal
+                    <select name="sucursal" id="sucursal">
+                    <option value="Admin">Puente Alto</option>
+                    <option value="Encargado">La florida</option>
+                    <option value="Tecnico">Providencia</option>
+                    </select>
+                </div>
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        const botonesEditar = document.querySelectorAll('td button[type="button"]');
+        botonesEditar.forEach((boton) => {
+        boton.addEventListener('click', () => {
+        const fila = boton.closest('tr');
+        const nombreUsuario = fila.children[1].textContent;
+        confirm(`¿Editar al usuario ${nombreUsuario}?`);
+        })  
+    })
+    </script>
+    <script>
+        document.getElementById("formnuevo").addEventListener("submit", function(evento) {
+            const usu = document.getElementById("usuario").value.trim();
+            const pas = document.getElementById("contraseña").value.trim();
+            const nom = document.getElementById("nombre").value.trim();
+            if (usu === "" || pas === "" || nom == ""){
+            evento.preventDefault();
+            alert("Complete todos los campos para poder continuar");                          
+            }
+            });
+    </script>
+    </body>
+</html>
